@@ -1,0 +1,24 @@
+.item-count {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.item-count .controls {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.item-count button {
+  background-color: #0077b6;
+  color: white;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.item-count button:hover {
+  background-color: #023e8a;
+}

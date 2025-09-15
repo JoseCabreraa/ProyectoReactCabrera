@@ -1,17 +1,28 @@
-header {
+.navbar {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  border: 2px solid black;
-  background-color: rgb(162, 193, 195);
+  align-items: center;
+  background-color: #222;
+  color: white;
+  padding: 10px 20px;
 }
-li {
-  display: inline-block;
-  margin: 10px;
-  cursor: pointer;
-}
+
 .titulo {
-  font-size: 30px;
-  font-weight: bold;
-  margin-left: 20px;
+  font-size: 1.5rem;
+}
+
+.menu {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+.menu li a {
+  text-decoration: none;
+  color: white;
+  transition: color 0.3s;
+}
+
+.menu li a:hover {
+  color: #ff9800;
 }

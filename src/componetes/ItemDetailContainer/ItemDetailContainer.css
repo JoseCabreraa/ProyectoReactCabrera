@@ -1,0 +1,26 @@
+.item-detail {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.item-detail img {
+  width: 300px;
+  border-radius: 10px;
+}
+
+.add-btn {
+  padding: 10px 15px;
+  background: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.add-btn:hover {
+  background: #388e3c;
+}
