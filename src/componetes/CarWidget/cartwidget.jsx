@@ -1,12 +1,14 @@
 import React from "react";
 import "./CartWidget.css";
 
-const imgCarrito = "./imagenes/carrito.png";
-
 const CartWidget = () => {
   return (
     <div>
-      <img className="imagenCarrito" src={imgCarrito} alt="carrito de compra" />
+      <img
+        className="imagenCarrito"
+        src="/Imagenes/carrito.png"
+        alt="carrito de compra"
+      />
     </div>
   );
 };

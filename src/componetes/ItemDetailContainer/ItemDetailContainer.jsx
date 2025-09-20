@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./ItemDetailContainer.css";
+import ItemCount from "../ItemCount/itemcount";
 import { useParams } from "react-router-dom";
 
 const productos = [
@@ -10,6 +11,8 @@ const productos = [
     price: 5000,
     stock: 10,
     img: "/Imagenes/chomba.webp",
+    description:
+      "Una chomba de morley de alta calidad, ideal para cualquier ocasión.",
   },
   {
     id: 2,
@@ -18,6 +21,8 @@ const productos = [
     price: 12000,
     stock: 5,
     img: "/Imagenes/pantalon.webp",
+    description:
+      "Pantalón cargo holgado con múltiples bolsillos y un ajuste cómodo.",
   },
   {
     id: 3,
@@ -26,6 +31,8 @@ const productos = [
     price: 20000,
     stock: 8,
     img: "/Imagenes/zapas.webp",
+    description:
+      "Zapatillas deportivas de color blanco, perfectas para un estilo casual.",
   },
 ];
 
@@ -46,14 +53,15 @@ const ItemDetailContainer = () => {
 
   return (
     <div className="item-detail">
-      <img src={item.img} alt={item.nombre} />
+      <img src={item.img} alt={item.name} />
       <div>
-        <h2>{item.nombre}</h2>
-        <p>{item.descripcion}</p>
+        <h2>{item.name}</h2>
+        <p>{item.description}</p>
         <p>
-          <strong>Precio:</strong> ${item.precio}
+          <strong>Precio:</strong> ${item.price}
         </p>
-        <button className="add-btn">Agregar al carrito</button>
+        {/* Aquí es donde agregas el componente ItemCount */}
+        <ItemCount stock={item.stock} initial={1} />
       </div>
     </div>
   );

@@ -1,24 +1,29 @@
-.item-count {
+.item-count-container {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.item-count-container .counter-buttons {
+  display: flex;
   align-items: center;
   gap: 0.5rem;
 }
 
-.item-count .controls {
-  display: flex;
-  gap: 0.5rem;
+.item-count-container button {
+  background-color: transparent;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
 }
 
-.item-count button {
-  background-color: #0077b6;
+.item-count-container .add-to-cart-btn {
+  background-color: #28a745;
   color: white;
   border: none;
-  padding: 0.4rem 0.8rem;
-  cursor: pointer;
-  border-radius: 5px;
-}
-
-.item-count button:hover {
-  background-color: #023e8a;
+  font-weight: bold;
 }

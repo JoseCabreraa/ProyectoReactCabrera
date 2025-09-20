@@ -5,8 +5,8 @@ import { useParams, Link } from "react-router-dom";
 const productos = [
   {
     id: 1,
-    name: "Chomba morley gris",
-    category: "remeras",
+    name: "Chomba morley gris", // propiedad 'name'
+    category: "remeras", // propiedad 'category'
     price: 5000,
     stock: 10,
     img: "/Imagenes/chomba.webp",
@@ -38,7 +38,7 @@ const ItemListContainer = ({ titulo }) => {
       setTimeout(() => {
         resolve(
           categoryId
-            ? productos.filter((p) => p.categoria === categoryId)
+            ? productos.filter((p) => p.category === categoryId) // Corregido: 'p.category'
             : productos
         );
       }, 500);
@@ -52,9 +52,10 @@ const ItemListContainer = ({ titulo }) => {
       <div className="productos">
         {items.map((prod) => (
           <div key={prod.id} className="producto">
-            <img src={prod.img} alt={prod.nombre} />
-            <h3>{prod.nombre}</h3>
-            <p>Precio: ${prod.precio}</p>
+            <img src={prod.img} alt={prod.name} />{" "}
+            {/* Corregido: 'prod.name' */}
+            <h3>{prod.name}</h3> {/* Corregido: 'prod.name' */}
+            <p>Precio: ${prod.price}</p> {/* Corregido: 'prod.price' */}
             <Link to={`/item/${prod.id}`} className="detalle-btn">
               Ver detalle
             </Link>

@@ -16,12 +16,13 @@ const ItemCount = ({ stock, initial }) => {
   };
 
   return (
-    <div>
-      <button onClick={decrement}>-</button>
-      <span style={{ margin: "0 1rem" }}>{count}</span>
-      <button onClick={increment}>+</button>
-      <br />
-      <button onClick={addToCart} style={{ marginTop: "1rem" }}>
+    <div className="item-count-container">
+      <div className="counter-buttons">
+        <button onClick={decrement}>-</button>
+        <span>{count}</span>
+        <button onClick={increment}>+</button>
+      </div>
+      <button className="add-to-cart-btn" onClick={addToCart}>
         Agregar al carrito
       </button>
     </div>
