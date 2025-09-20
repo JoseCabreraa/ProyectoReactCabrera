@@ -60,7 +60,7 @@ const ItemDetailContainer = () => {
         <p>
           <strong>Precio:</strong> ${item.price}
         </p>
-        {/* Aquí es donde agregas el componente ItemCount */}
+        {}
         <ItemCount stock={item.stock} initial={1} />
       </div>
     </div>
