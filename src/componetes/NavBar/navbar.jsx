@@ -1,6 +1,6 @@
 import React from "react";
 import "./NavBar.css";
-import CarWidget from "../CarWidget/CarWidget";
+import CartWidget from "../CarWidget/cartwidget";
 import { Link } from "react-router-dom";
 
 const NavBar = () => {
@@ -26,7 +26,7 @@ const NavBar = () => {
           </li>
         </ul>
       </nav>
-      <CarWidget />
+      <CartWidget />
     </header>
   );
 };
