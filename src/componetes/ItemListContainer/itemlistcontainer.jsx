@@ -28,7 +28,6 @@ const ItemListContainer = ({ titulo }) => {
   if (products.length === 0) return <p>No hay productos disponibles.</p>;
 
   return (
-    // AÑADIMOS ESTE DIV para aplicar la clase ".item-list-container"
     <div className="item-list-container">
       <ItemList products={products} />
     </div>

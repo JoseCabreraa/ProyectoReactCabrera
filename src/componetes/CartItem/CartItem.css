@@ -1,0 +1,34 @@
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.cart-item h4 {
+  flex-grow: 1;
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.cart-item p {
+  min-width: 100px;
+  text-align: right;
+  margin: 0 15px;
+}
+
+.btn-remover {
+  background-color: #ffc107;
+  color: #333;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s;
+}
+
+.btn-remover:hover {
+  background-color: #e0a800;
+}

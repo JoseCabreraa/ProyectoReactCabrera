@@ -1,0 +1,51 @@
+.checkout-form {
+  max-width: 450px;
+  margin: 50px auto;
+  padding: 30px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background-color: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-input {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.btn-finalizar-compra {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 14px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-top: 10px;
+  transition: background-color 0.3s;
+}
+
+.btn-finalizar-compra:hover {
+  background-color: #218838;
+}
+
+.compra-confirmada {
+  text-align: center;
+  margin-top: 50px;
+  padding: 30px;
+  border: 2px solid #28a745;
+  border-radius: 10px;
+  background-color: #e9f7ef;
+  max-width: 450px;
+  margin: 50px auto;
+}
+
+.compra-confirmada h2 {
+  color: #28a745;
+}

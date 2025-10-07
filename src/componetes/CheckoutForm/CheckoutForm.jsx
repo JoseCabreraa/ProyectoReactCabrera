@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useCart } from "../../context/CartContext";
 import { createOrder } from "../../services/firestoreService";
+import "./CheckoutForm.css";
 
 const CheckoutForm = () => {
   const { cart, totalPrice, clearCart } = useCart();
@@ -26,14 +27,15 @@ const CheckoutForm = () => {
 
   if (orderId)
     return (
-      <div>
+      <div className="compra-confirmada">
         <h2>Compra confirmada!</h2>
         <p>ID de la orden: {orderId}</p>
       </div>
     );
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="checkout-form">
+      {" "}
       <input
         type="text"
         name="name"
@@ -41,7 +43,8 @@ const CheckoutForm = () => {
         value={buyer.name}
         onChange={handleChange}
         required
-      />
+        className="form-input"
+      />{" "}
       <input
         type="email"
         name="email"
@@ -49,8 +52,11 @@ const CheckoutForm = () => {
         value={buyer.email}
         onChange={handleChange}
         required
-      />
-      <button type="submit">Finalizar compra</button>
+        className="form-input"
+      />{" "}
+      <button type="submit" className="btn-finalizar-compra">
+        Finalizar compra
+      </button>{" "}
     </form>
   );
 };

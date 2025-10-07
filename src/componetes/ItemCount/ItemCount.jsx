@@ -8,7 +8,6 @@ const ItemCount = ({ stock, onAdd }) => {
 
   return (
     <div className="item-count-container">
-      {/* DIV ENVOLVENTE para aplicar la clase .counter-buttons */}
       <div className="counter-buttons">
         <button onClick={decrement}>-</button>
         <span>{count}</span>
