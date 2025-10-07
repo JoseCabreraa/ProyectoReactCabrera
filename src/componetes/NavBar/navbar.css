@@ -6,7 +6,16 @@
   color: white;
   padding: 10px 20px;
 }
+.logo-img {
+  height: 40px;
+  width: auto;
+  cursor: pointer;
+}
 
+.logo-link {
+  display: flex;
+  align-items: center;
+}
 .titulo {
   font-size: 1.5rem;
 }

@@ -1,66 +1,36 @@
 import React, { useEffect, useState } from "react";
 import "./ItemListContainer.css";
-import { useParams, Link } from "react-router-dom";
-
-const productos = [
-  {
-    id: 1,
-    name: "Chomba morley gris",
-    category: "remeras",
-    price: 5000,
-    stock: 10,
-    img: "/Imagenes/chomba.webp",
-  },
-  {
-    id: 2,
-    name: "Cargo baggy azul oscuro",
-    category: "pantalones",
-    price: 12000,
-    stock: 5,
-    img: "/Imagenes/pantalon.webp",
-  },
-  {
-    id: 3,
-    name: "Zapatillas Hylane Blancas",
-    category: "zapatillas",
-    price: 20000,
-    stock: 8,
-    img: "/Imagenes/zapas.webp",
-  },
-];
+import { useParams } from "react-router-dom";
+import ItemList from "../ItemList/ItemList";
+import {
+  getAllProducts,
+  getProductsByCategory,
+} from "../../services/firestoreService";
 
 const ItemListContainer = ({ titulo }) => {
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
   const { categoryId } = useParams();
-  const [items, setItems] = useState([]);
 
   useEffect(() => {
-    const getData = new Promise((resolve) => {
-      setTimeout(() => {
-        resolve(
-          categoryId
-            ? productos.filter((p) => p.category === categoryId)
-            : productos
-        );
-      }, 500);
-    });
-    getData.then((res) => setItems(res));
+    setLoading(true);
+    const fetchProducts = async () => {
+      const data = categoryId
+        ? await getProductsByCategory(categoryId)
+        : await getAllProducts();
+      setProducts(data);
+      setLoading(false);
+    };
+    fetchProducts();
   }, [categoryId]);
 
+  if (loading) return <p>Cargando productos...</p>;
+  if (products.length === 0) return <p>No hay productos disponibles.</p>;
+
   return (
+    // AÑADIMOS ESTE DIV para aplicar la clase ".item-list-container"
     <div className="item-list-container">
-      <h2>{titulo}</h2>
-      <div className="productos">
-        {items.map((prod) => (
-          <div key={prod.id} className="producto">
-            <img src={prod.img} alt={prod.name} /> {}
-            <h3>{prod.name}</h3> {}
-            <p>Precio: ${prod.price}</p> {}
-            <Link to={`/item/${prod.id}`} className="detalle-btn">
-              Ver detalle
-            </Link>
-          </div>
-        ))}
-      </div>
+      <ItemList products={products} />
     </div>
   );
 };

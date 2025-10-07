@@ -1,30 +1,29 @@
 import React, { useState } from "react";
-import "./itemcount.css";
-const ItemCount = ({ stock, initial }) => {
-  const [count, setCount] = useState(initial);
 
-  const increment = () => {
-    if (count < stock) setCount(count + 1);
-  };
+const ItemCount = ({ stock, onAdd }) => {
+  const [count, setCount] = useState(1);
 
-  const decrement = () => {
-    if (count > 1) setCount(count - 1);
-  };
-
-  const addToCart = () => {
-    alert(`Agregaste ${count} producto(s) al carrito`);
-  };
+  const increment = () => setCount((prev) => Math.min(prev + 1, stock));
+  const decrement = () => setCount((prev) => Math.max(prev - 1, 1));
 
   return (
     <div className="item-count-container">
+      {/* DIV ENVOLVENTE para aplicar la clase .counter-buttons */}
       <div className="counter-buttons">
         <button onClick={decrement}>-</button>
         <span>{count}</span>
         <button onClick={increment}>+</button>
       </div>
-      <button className="add-to-cart-btn" onClick={addToCart}>
+
+      <button
+        onClick={() => onAdd(count)}
+        disabled={stock === 0}
+        className="add-to-cart-btn"
+      >
         Agregar al carrito
       </button>
+
+      {stock === 0 && <p>Producto sin stock</p>}
     </div>
   );
 };
